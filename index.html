@@ -1,0 +1,985 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prof. Dr. Saed Khayat</title>
+  <meta name="description" content="Personal academic website for Prof. Dr. Saed K. Khayat, Director of International Grants and Project Center at An-Najah National University.">
+  <style>
+    :root {
+      --ink: #17212b;
+      --muted: #657487;
+      --line: #d9e2ea;
+      --paper: #f6f8fa;
+      --panel: #ffffff;
+      --accent: #0f766e;
+      --accent-dark: #0b5f59;
+      --gold: #b7782f;
+      --soft: #e8f3f1;
+      --shadow: 0 18px 48px rgba(24, 36, 50, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.62;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(246, 248, 250, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(217, 226, 234, 0.8);
+    }
+
+    .nav {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 850;
+      min-width: fit-content;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--muted);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .nav-links a {
+      padding: 8px 9px;
+      border-radius: 8px;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-dark);
+      background: var(--soft);
+    }
+
+    .hero {
+      min-height: calc(100vh - 72px);
+      display: grid;
+      align-items: center;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(18, 29, 40, 0.9), rgba(18, 29, 40, 0.48)),
+        url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1800&q=80") center/cover;
+      padding: 70px 0 92px;
+    }
+
+    .hero-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 760px) minmax(280px, 360px);
+      gap: 36px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      color: #d6f6f0;
+      font-weight: 800;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--gold);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: 1.04;
+      letter-spacing: 0;
+      max-width: 820px;
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 22px 0 30px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: clamp(18px, 2.1vw, 23px);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 10px 17px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      font-weight: 800;
+    }
+
+    .button.primary {
+      color: #fff;
+      background: var(--accent);
+    }
+
+    .button.primary:hover { background: var(--accent-dark); }
+
+    .button.secondary {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.55);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.96);
+      color: var(--ink);
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .portrait {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 8px;
+      margin-bottom: 18px;
+      display: block;
+    }
+
+    .hero-card h2 {
+      margin: 0 0 12px;
+      font-size: 22px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .contact-list strong {
+      display: block;
+      color: var(--ink);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .section {
+      padding: 78px 0;
+    }
+
+    .section.alt {
+      background: #edf3f6;
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 30px;
+    }
+
+    .section-head h2 {
+      margin: 0 0 10px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.16;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .image-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .image-tile {
+      min-height: 230px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      box-shadow: 0 10px 26px rgba(24, 36, 50, 0.08);
+    }
+
+    .image-tile::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(18, 29, 40, 0.08), rgba(18, 29, 40, 0.72));
+    }
+
+    .image-tile span {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      z-index: 1;
+      color: #fff;
+      font-weight: 850;
+      font-size: 18px;
+      line-height: 1.25;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .gallery figure {
+      margin: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      box-shadow: 0 10px 26px rgba(24, 36, 50, 0.08);
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 330px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery figcaption {
+      padding: 13px 16px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: 0 10px 26px rgba(24, 36, 50, 0.07);
+    }
+
+    .panel p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    .panel p:last-child { margin-bottom: 0; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .stat {
+      min-height: 128px;
+      padding: 18px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .stat strong {
+      font-size: 33px;
+      color: var(--accent-dark);
+      line-height: 1;
+    }
+
+    .stat span {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .item {
+      display: grid;
+      grid-template-columns: 175px 1fr;
+      gap: 18px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+
+    .date {
+      color: var(--accent-dark);
+      font-weight: 850;
+    }
+
+    .item h3 {
+      margin: 0 0 4px;
+      font-size: 21px;
+      line-height: 1.25;
+    }
+
+    .item .org {
+      margin: 0 0 12px;
+      color: var(--gold);
+      font-weight: 750;
+    }
+
+    .item ul,
+    .compact-list {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .item li,
+    .compact-list li {
+      margin: 6px 0;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .card {
+      min-height: 185px;
+      padding: 22px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .tag-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 6px 11px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .project-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .project {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+
+    .project h3 {
+      margin: 0 0 8px;
+      font-size: 19px;
+    }
+
+    .project p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .project a {
+      color: var(--accent-dark);
+      font-weight: 750;
+    }
+
+    .pub-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding-left: 21px;
+      color: var(--muted);
+    }
+
+    .pub-list li {
+      padding-left: 4px;
+    }
+
+    .columns {
+      columns: 2;
+      column-gap: 28px;
+    }
+
+    .contact-band {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      padding: 34px;
+      background: var(--ink);
+      color: #fff;
+      border-radius: 8px;
+    }
+
+    .contact-band h2 {
+      margin: 0 0 8px;
+      font-size: clamp(27px, 4vw, 40px);
+    }
+
+    .contact-band p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.76);
+    }
+
+    .footer {
+      padding: 28px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        min-height: auto;
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+
+      .hero {
+        min-height: 720px;
+      }
+
+      .hero-inner,
+      .profile-grid,
+      .image-strip,
+      .gallery,
+      .cards,
+      .project-list,
+      .contact-band {
+        grid-template-columns: 1fr;
+      }
+
+      .item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .columns {
+        columns: 1;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 58px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#home">
+        <span class="brand-mark">SK</span>
+        <span>Prof. Dr. Saed Khayat</span>
+      </a>
+      <div class="nav-links">
+        <a href="#about">Profile</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#supervision">Supervision</a>
+        <a href="#publications">Publications</a>
+        <a href="#erasmus">Submitted Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero" aria-label="Introduction">
+      <div class="hero-inner">
+        <div>
+          <p class="eyebrow">International grants, research leadership, and higher education development</p>
+          <h1>Prof. Dr. rer. nat. Saed K. Khayat</h1>
+          <p class="lead">Director of the International Grants and Project Center at An-Najah National University, with experience in international relations and external affairs, research unit leadership, water resources, hydro-geochemistry, and higher education transformation.</p>
+          <div class="actions">
+            <a class="button primary" href="#experience">View Experience</a>
+            <a class="button secondary" href="#publications">Research Output</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Contact summary">
+          <img class="portrait" src="saed-khayat.jpg" alt="Prof. Dr. Saed K. Khayat">
+          <h2>Contact</h2>
+          <ul class="contact-list">
+            <li><strong>Email</strong><a href="mailto:saed.khayyat@najah.edu">saed.khayyat@najah.edu</a></li>
+            <li><strong>Mobile</strong><a href="tel:+972599868605">+972 599 868 605</a></li>
+            <li><strong>Location</strong>Nablus, West Bank, Palestine</li>
+            <li><strong>Institution</strong>An-Najah National University</li>
+            <li><strong>Address</strong>Omar Ibn Alkhattab Street, P400, Nablus</li>
+            <li><strong>ORCID</strong>0000-0002-3865-4291</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Professional Profile</h2>
+          <p>Academic leader and researcher working across international grants, strategic partnerships, project management, water resources, and education modernization.</p>
+        </div>
+        <div class="profile-grid">
+          <div class="panel">
+            <p>Prof. Dr. Saed K. Khayat serves as Director of the International Grants and Project Center at An-Najah National University in Nablus, Palestine. His CV also highlights roles in international relations and external affairs and as Director of a Research Unit. His work focuses on grant acquisition, proposal development, international project implementation, institutional compliance, strategic partnerships, and capacity building.</p>
+            <p>He has held senior leadership roles in international academic relations, planning, development, quality assurance, applied research, and technical and vocational education. His research background includes hydro-geochemistry, groundwater quality, isotope hydrogeology, water education, and environmental resources management.</p>
+            <p>His academic and institutional work connects universities, ministries, European partners, international agencies, and research centers through funded projects, training programs, and collaborative education initiatives.</p>
+          </div>
+          <div class="stats" aria-label="Career highlights">
+            <div class="stat"><strong>40+</strong><span>Selected journal articles, proceedings, and book chapters</span></div>
+            <div class="stat"><strong>20+</strong><span>Years in research, higher education, and international projects</span></div>
+            <div class="stat"><strong>7</strong><span>Supervised graduate research works listed in the CV</span></div>
+            <div class="stat"><strong>1997</strong><span>Start of listed higher education leadership experience</span></div>
+          </div>
+        </div>
+        <div class="image-strip" aria-label="Professional themes">
+          <div class="image-tile" style="background-image:url('international-presentation.jpg')">
+            <span>International Academic Cooperation</span>
+          </div>
+          <div class="image-tile" style="background-image:url('international-network.jpg')">
+            <span>University Networks and Partnerships</span>
+          </div>
+          <div class="image-tile" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80')">
+            <span>Water Resources and Environmental Studies</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="experience">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Work Experience</h2>
+          <p>Leadership roles in universities, ministries, and international research institutions.</p>
+        </div>
+        <div class="timeline">
+          <article class="item">
+            <div class="date">2022 - Current</div>
+            <div>
+              <h3>Director of International Grants and Project Center</h3>
+              <p class="org">An-Najah National University, Nablus</p>
+              <ul>
+                <li>Identifies and secures international funding opportunities including Erasmus+, Horizon Europe, and USAID.</li>
+                <li>Coordinates competitive proposal development with faculty and research teams.</li>
+                <li>Oversees funded project implementation, compliance, reporting, risk management, and impact assessment.</li>
+                <li>Builds international partnerships with universities, agencies, and global institutions.</li>
+                <li>Promotes digitalization, virtual learning, education modernization, and staff capacity building.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="item">
+            <div class="date">2021 - 2022</div>
+            <div>
+              <h3>Vice President for International Academic Relationship</h3>
+              <p class="org">Palestine Technical University Kadoorie</p>
+              <ul>
+                <li>Led the university internationalization strategy, academic partnerships, and global networking.</li>
+                <li>Managed mobility and exchange programs for students and faculty.</li>
+                <li>Promoted international research collaboration, joint projects, conferences, and funding opportunities.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="item">
+            <div class="date">2020 - 2021</div>
+            <div>
+              <h3>Dean of Planning, Development and Quality</h3>
+              <p class="org">Palestine Technical University Kadoorie</p>
+              <ul>
+                <li>Led strategic planning, institutional development, academic quality assurance, and accreditation processes.</li>
+                <li>Supported data-driven decision making, curriculum development, and institutional capacity building.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="item">
+            <div class="date">2014 - 2015</div>
+            <div>
+              <h3>Director of Technical and Applied Research Center</h3>
+              <p class="org">Palestine Technical University Kadoorie</p>
+              <ul>
+                <li>Led applied research, innovation, external partnerships, research funding, and infrastructure development.</li>
+                <li>Supported faculty and researchers through training, capacity building, quality assurance, and knowledge dissemination.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="item">
+            <div class="date">2016</div>
+            <div>
+              <h3>Researcher in Hydro-Geochemistry</h3>
+              <p class="org">Helmholtz Centre for Environmental Research, Halle, Germany</p>
+              <ul>
+                <li>Guest scientist in the Catchment Hydrology Department, working with research teams on water quality and quantity.</li>
+                <li>Led international research projects with German partners.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="item">
+            <div class="date">2011 - 2022</div>
+            <div>
+              <h3>Professor</h3>
+              <p class="org">Palestine Technical University Kadoorie</p>
+              <ul>
+                <li>Teaching and research professor in water, environmental, and related academic programs.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="item">
+            <div class="date">2003 - 2009</div>
+            <div>
+              <h3>Guest Scientist and Research Fellow</h3>
+              <p class="org">Helmholtz Centre for Environmental Research UFZ, Halle, Germany</p>
+              <ul>
+                <li>Researcher and postdoctorate in environmental research and water-related studies.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="item">
+            <div class="date">1997 - 2010</div>
+            <div>
+              <h3>Director of Vocational Education and Colleges</h3>
+              <p class="org">Ministry of Higher Education and Scientific Research, Ramallah</p>
+              <ul>
+                <li>Led policy development and strategic planning for the TVET sector.</li>
+                <li>Oversaw quality standards, college coordination, industry partnerships, workforce development, monitoring, evaluation, and reporting.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Education, Languages and Skills</h2>
+          <p>Academic preparation, language proficiency, and digital and leadership competencies.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <h3>Dr. rer. nat.</h3>
+            <p>Doctor der Naturwissenschaften, Karlsruhe Institute of Technology, Germany. EQF Level 8. 2003 - 2005.</p>
+          </article>
+          <article class="card">
+            <h3>MSc. Environmental Sciences</h3>
+            <p>An-Najah National University, Nablus, Palestine. EQF Level 7. 1999 - 2001.</p>
+          </article>
+          <article class="card">
+            <h3>BSc. Biological Sciences</h3>
+            <p>An-Najah National University, Nablus, Palestine. EQF Level 6. 1992 - 1996.</p>
+          </article>
+        </div>
+        <div class="panel" style="margin-top:18px">
+          <h3>Languages</h3>
+          <div class="tag-grid">
+            <span class="tag">Arabic: Mother tongue</span>
+            <span class="tag">English: C2 listening, reading, spoken production, writing; C1 spoken interaction</span>
+            <span class="tag">German: B1</span>
+          </div>
+        </div>
+        <div class="panel" style="margin-top:18px">
+          <h3>Digital and Professional Skills</h3>
+          <div class="tag-grid">
+            <span class="tag">AI-based work facilitation</span>
+            <span class="tag">Artificial intelligence prompting</span>
+            <span class="tag">Microsoft Office</span>
+            <span class="tag">Strategic planning</span>
+            <span class="tag">Decision-making</span>
+            <span class="tag">Critical thinking</span>
+            <span class="tag">Team-work oriented</span>
+            <span class="tag">Organizational and planning skills</span>
+            <span class="tag">Written and verbal communication</span>
+            <span class="tag">Social media and dissemination tools</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="projects">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Projects, Grants and Capacity Building</h2>
+          <p>Selected funded projects, awards, institutional capacity building activities, and submitted international project history.</p>
+        </div>
+        <div class="project-list">
+          <article class="project">
+            <h3>Bologna for Science Education in Palestine and Jordan</h3>
+            <p>2024 - 2027. Elevating higher education in Palestine and Jordan through Bologna Process implementation. <a href="https://basejops.org/">basejops.org</a></p>
+          </article>
+          <article class="project">
+            <h3>PhD Governance in Palestine - PhDGov</h3>
+            <p>2024 - 2026. Enhancing governance and management of PhD programs at Palestinian higher education institutions. <a href="https://www.phdgov.ps/en">phdgov.ps</a></p>
+          </article>
+          <article class="project">
+            <h3>WaSec</h3>
+            <p>2018 - 2022. Innovations in water education, water security, and socio-economic development in the Eastern Mediterranean under climate change. <a href="https://wasec.just.edu.jo/Pages/default.aspx">wasec.just.edu.jo</a></p>
+          </article>
+          <article class="project">
+            <h3>IAEA Groundwater Isotopes</h3>
+            <p>2014 - 2019. Evaluating groundwater resources using environmental isotopes, Phase I and Phase II, projects PAL7004 and PAL7005.</p>
+          </article>
+          <article class="project">
+            <h3>Early Warning System for Drinking Groundwater</h3>
+            <p>2017 - 2019. Karstic aquifer of Hebron Area, Palestine; Palestinian-German academic cooperation funded by BMBF and the Palestinian Ministry of Higher Education.</p>
+          </article>
+          <article class="project">
+            <h3>OKP-Pal WASH and CSA</h3>
+            <p>2019 - Present. Capacity building in water, sanitation and hygiene, and climate-smart agriculture education and research in Palestine.</p>
+          </article>
+          <article class="project">
+            <h3>ICT4EDU</h3>
+            <p>2023 - Present. Enhancing ICT competencies of early childhood educators at HEIs in MENA countries, co-funded by Erasmus+ CBHE.</p>
+          </article>
+          <article class="project">
+            <h3>AgroTech</h3>
+            <p>2023 - Present. AgroTechnology VET Centres to network and train future farmers in Jordan and Palestine, co-funded by Erasmus+ CB-VET.</p>
+          </article>
+        </div>
+        <div class="panel" style="margin-top:18px">
+          <h3>Earlier Project Participation and Management</h3>
+          <ul class="compact-list columns">
+            <li>Water Resources Evaluation for Sustainable Development in the Jordan Rift Basin, BMBF grant 02WT0250, 2002 - 2005.</li>
+            <li>SMART: Sustainable Management of Available Water Resources with Innovative Technologies, BMBF grant 02WM0801, 2006 - 2009.</li>
+            <li>SUMAR: Sustainable Management of Water Resources in the Dead Sea Area, BMBF grant 02WM0848, 2007 - 2012.</li>
+            <li>Palestine for European Research Area - PERA, EU-FP7, 2011 - 2013.</li>
+            <li>DESERVE: Helmholtz Virtual Institute Dead Sea Research Venue, 2012 - 2017.</li>
+            <li>Portable water sensing system, PADUCO program on Water, 2013 - 2015.</li>
+            <li>Enhancing food security via nuclear based approaches, IAEA PAL5011, 2022 - Present.</li>
+          </ul>
+        </div>
+        <div class="panel" style="margin-top:18px">
+          <h3>Honours and Awards</h3>
+          <ul class="compact-list">
+            <li>Zamalah Grant - Arab Fund for Development: one-year postdoc at UFZ Environmental Research Centre, Halle, Germany.</li>
+            <li>DFG Sachbeihilfen Grant: Spatial and temporal variations in hydrochemistry and isotopic compositions of groundwater and surface runoff in the Jordan Rift Valley.</li>
+            <li>DAAD-Helmholtz Post Doc Award: Postdoctoral fund for two years.</li>
+            <li>BMBF - German Federal Ministry for Education scholarship.</li>
+          </ul>
+        </div>
+        <div class="panel" style="margin-top:18px">
+          <h3>Institutional Capacity Building</h3>
+          <ul class="compact-list">
+            <li>Establishing the Water Quality Lab at Palestine Technical University Kadoorie.</li>
+            <li>Establishing the Virtual Learning Lab for water education and training.</li>
+          </ul>
+        </div>
+        <div class="gallery" aria-label="International cooperation photo gallery">
+          <figure>
+            <img src="international-presentation.jpg" alt="Prof. Dr. Saed Khayat presenting an international academic cooperation project">
+            <figcaption>Presenting international academic cooperation and Bologna-related higher education development.</figcaption>
+          </figure>
+          <figure>
+            <img src="international-network.jpg" alt="Prof. Dr. Saed Khayat with international university partners">
+            <figcaption>Building university networks and partnerships with regional and European collaborators.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="supervision">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Academic Supervision</h2>
+          <p>Graduate research supervision in water resources, environmental biotechnology, hydrology, salinity, and groundwater quality.</p>
+        </div>
+        <div class="panel">
+          <ul class="compact-list">
+            <li>Alaa Jadou'a, ongoing from 2022: medical waste residues in wastewater and drinking water along Wadi Zomar stream, An-Najah National University.</li>
+            <li>Noura Omar, 2021: salinity-based crop suitability map for agricultural area in Jericho Auja, Palestine Technical University Kadoorie.</li>
+            <li>Mays Nofal, 2020: diversity and efficiency of sulfate reducing bacteria in selected groundwater at West Bank, Palestine.</li>
+            <li>Sawsan Awes, 2018: bacterial sulfate reduction as a tool for desalination of brackish water in the lower Jordan Valley.</li>
+            <li>Reem Odeh, 2017: quality warning technique for groundwater wells in the Karst Aquifer of Hebron district, An-Najah National University.</li>
+            <li>Saleh Suleiman, 2010: environmental flow regime using chemical and biological parameters in Wadi Zomar, Birzeit University.</li>
+            <li>Fayez Abu-Hilo, 2008: hydrochemistry and isotopic compositions of groundwater in the Jordan Rift Valley, Birzeit University.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="publications">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Selected Publication Highlights</h2>
+          <p>Journal publications, conference proceedings, and book chapters listed in the CV.</p>
+        </div>
+        <div class="panel">
+          <ol class="pub-list">
+            <li>Salha, S., Mousa, A., & Khayat, S. (2024). Artificial intelligence in education policies in school context: Mixed approach research. Journal of Educational Leadership and Policy Studies.</li>
+            <li>Litskas, V. D., Iakovoglou, V., Al-Salaymeh, A., Khayat, S., & Hassouneh, K. (2023). Innovation in water education programs in the Eastern Mediterranean. Euro-Mediterranean Journal for Environmental Integration, 8(2), 243-253.</li>
+            <li>Mallak, S. F., Al-Mallak, G. A., Sos, N., & Khayat, S. (2023). Using Markov Chains Models to Predict Water Supply and Demand. Palestine Journal of Mathematics, 12(1).</li>
+            <li>Nofal, M., Sholi, N. J. Y., Marei, A., & Khayat, S. (2022). Sulfate-reducing bacteria in selected groundwater at West Bank, Palestine. Desalination and Water Treatment, 275, 253-259.</li>
+            <li>Al-Sayara, A., Marei, A., Khayat, S., & Sonneveld, B. (2022). Optimization of thermotolerant coliform removal using bio-sand filter. Desalination and Water Treatment, 275, 207-220.</li>
+            <li>Sayara, T., Khayat, S., Saleh, J., & van der Steen, P. (2021). Algal-bacterial symbiosis for nutrients removal from wastewater. Environmental Technology & Innovation, 23.</li>
+            <li>Sayara, T., Khayat, S., Saleh, J., & van der Steen, P. (2021). Nutrients removal from secondary effluent using photobioreactors. Saudi Journal of Biological Sciences, 28, 504-511.</li>
+            <li>Khayat, S., Marei, A., Amirieh, S., & Warad, I. (2020). Potential of Trihalomethanes formation in domestic water sources of Jericho area. Moroccan Journal of Chemistry, 8(1), 540-551.</li>
+            <li>Khayat, S. (2020). Estimation of the Environmental Flow Regime for Pollution Reduction: Wadi Zomar, Palestine. PTUK Journal.</li>
+            <li>Khayat, S., Marei, A., Hippler, D., Barghouthi, Z., & Dietzel, M. (2020). Environmental isotopes and groundwater recharge in the North-eastern Basin, Palestine. Hydrological Sciences Journal, 65(4), 583-596.</li>
+            <li>Khayat, S. K., Marei, A., Geyer, S., & Rodiger, T. (2018). Hydrogeological settings in the northeastern slope of the West Bank. Euro-Mediterranean Journal for Environmental Integration, 3, 32.</li>
+            <li>Khayat, S. K., Marei, A., Roediger, T., & Geyer, S. (2017). Stable isotopes and sub-aquifer systems in the Eastern Slope of Bethlehem-Hebron. Arabian Journal of Geosciences, 10(22), 485.</li>
+            <li>Hillel, N., Siebert, C., Geyer, S., Khayat, S., Licha, T., & Laronne, J. B. (2015). Water quality and discharge of the Lower Jordan River. Journal of Hydrology, 527, 1096-1105.</li>
+            <li>Khayat, S., Marei, A., Geyer, S., & Eter, H. (2014). Surface water runoff to the Dead Sea under climate scenarios. International Journal of Water.</li>
+            <li>Khayat, S., Marei, A., Natsheh, B., & Abu-Khalaf, N. (2012). Groundwater pollutants transport in Tulkarm Area, Palestine. Resources and Environment, 2(6), 281-290.</li>
+            <li>Marei, A., Khayat, S., & Dajani, M. (2012). Water quality legislation in Palestine over the past century. Environmental Sciences Europe, 24(15).</li>
+            <li>Khayat, S., Hotzl, H., Geyer, S., Ali, W., Knoller, K., & Strauch, G. (2006). Sulphur and oxygen isotopic characters of dissolved sulphate in groundwater. Isotopes in Environmental and Health Studies, 42(3), 289-302.</li>
+            <li>Khayat, S., Hotzl, H., Geyer, S., Ali, W., & Strauch, G. (2006). Hydrochemical investigation of Pleistocene wells and springs, Jericho area. Hydrogeology Journal, 14(1), 192-202.</li>
+            <li>Abu-Khalaf, N., Khayat, S., & French, P. (2015). Portable water sensing system. First Palestinian-Dutch Academic Cooperation Program on Water Conference.</li>
+            <li>Khayat, S., Marei, A., & Barghouthi, Z. (2019). Mapping stable isotopes to understand groundwater recharge and flow mechanisms. In Isotopes Applications in Earth Sciences.</li>
+            <li>Chen, C., Khayat, S., Geyer, S., Ali, W., Hotzl, H., & Kolditz, O. (2009). GIS-based hydrosystem model for the Jericho Plain. In The Water of the Jordan Valley.</li>
+            <li>Khayat, S., Ghanem, M., Tamimi, A., Haddad, M., Geyer, S., Hotzl, H., Ali, W., & Moller, P. (2009). Hydrochemistry and isotope hydrogeology in the Jericho area. In The Water of the Jordan Valley.</li>
+          </ol>
+        </div>
+        <div class="panel" style="margin-top:18px">
+          <h3>Research Profiles</h3>
+          <div class="tag-grid">
+            <span class="tag">Google Scholar: Prof. Dr. rer. nat. Saed Khayat</span>
+            <span class="tag">ResearchGate: Saed K. Khayat</span>
+            <span class="tag">ORCID: 0000-0002-3865-4291</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="erasmus">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Submitted International Project History</h2>
+          <p>Examples from Erasmus+, Horizon, and youth/capacity-building calls listed in the CV.</p>
+        </div>
+        <div class="panel">
+          <div class="tag-grid">
+            <span class="tag">HIGH-Med</span><span class="tag">LEARN2</span><span class="tag">HEAL</span><span class="tag">Y-GREEN</span><span class="tag">DAPCP</span><span class="tag">APMP-HE</span><span class="tag">Eng-Inc</span><span class="tag">AI_SkillUP</span><span class="tag">CIAL</span><span class="tag">DEVTSM</span><span class="tag">YouLead</span><span class="tag">VODA</span><span class="tag">TVETDig</span><span class="tag">CONNECT</span><span class="tag">I-DRIVE</span><span class="tag">VET Tech</span><span class="tag">2D-VET</span><span class="tag">LEARN</span><span class="tag">METALAB</span><span class="tag">SOUTHMED-PROPMAN</span><span class="tag">SEEET</span><span class="tag">OSCEV-PT</span><span class="tag">GET-SMART</span><span class="tag">LAPE</span><span class="tag">EXCEED</span><span class="tag">Med-NbS-Edu</span><span class="tag">HTYouth</span><span class="tag">Prof-PM</span><span class="tag">EDU</span><span class="tag">IBT Diploma</span><span class="tag">SMART-IPC</span><span class="tag">XR-Centers</span><span class="tag">EdTech</span><span class="tag">PasPassDS</span><span class="tag">PDEHEV</span><span class="tag">EE4HUMANITIES</span><span class="tag">InclUPAS</span><span class="tag">BE-GREEN</span><span class="tag">SUCCEED</span><span class="tag">DigiPharm</span><span class="tag">NEVEREST</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="contact">
+      <div class="wrap">
+        <div class="contact-band">
+          <div>
+            <h2>Contact and Collaboration</h2>
+            <p>Available for international academic cooperation, grant development, research partnerships, and higher education transformation projects.</p>
+          </div>
+          <a class="button primary" href="mailto:saed.khayyat@najah.edu">Email Prof. Khayat</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>© 2026 Prof. Dr. Saed K. Khayat</span>
+      <span>An-Najah National University · Nablus, Palestine</span>
+    </div>
+  </footer>
+</body>
+</html>
