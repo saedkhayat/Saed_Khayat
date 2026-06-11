@@ -12,9 +12,10 @@
       --line: #d9e2ea;
       --paper: #f6f8fa;
       --panel: #ffffff;
-      --accent: #0f766e;
-      --accent-dark: #0b5f59;
-      --gold: #b7782f;
+      --accent: #144f8f;
+      --accent-dark: #0d3768;
+      --aqua: #0f766e;
+      --gold: #d6a21e;
       --soft: #e8f3f1;
       --shadow: 0 18px 48px rgba(24, 36, 50, 0.12);
     }
@@ -60,6 +61,16 @@
       min-width: fit-content;
     }
 
+    .brand-logo {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: #fff;
+      padding: 3px;
+      border: 1px solid var(--line);
+    }
+
     .brand-mark {
       width: 42px;
       height: 42px;
@@ -96,8 +107,9 @@
       align-items: center;
       color: #fff;
       background:
-        linear-gradient(90deg, rgba(18, 29, 40, 0.9), rgba(18, 29, 40, 0.48)),
-        url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1800&q=80") center/cover;
+        radial-gradient(circle at 88% 18%, rgba(15, 118, 110, 0.32), transparent 26%),
+        linear-gradient(90deg, rgba(13, 35, 62, 0.92), rgba(13, 35, 62, 0.58)),
+        url("najah-campus.jpg") center/cover;
       padding: 70px 0 92px;
     }
 
@@ -140,6 +152,26 @@
       margin: 22px 0 30px;
       color: rgba(255, 255, 255, 0.88);
       font-size: clamp(18px, 2.1vw, 23px);
+    }
+
+    .focus-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 0 0 28px;
+    }
+
+    .focus-line span {
+      min-height: 32px;
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 10px;
+      border-radius: 8px;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.13);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      font-weight: 800;
+      font-size: 13px;
     }
 
     .actions {
@@ -448,6 +480,80 @@
       font-weight: 650;
     }
 
+    .profile-links {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .profile-links a {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--accent-dark);
+      font-weight: 800;
+    }
+
+    .profile-links a:hover {
+      border-color: var(--accent);
+      background: var(--soft);
+    }
+
+    .visual-signals {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .signal {
+      position: relative;
+      overflow: hidden;
+      min-height: 170px;
+      padding: 22px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: #fff;
+      box-shadow: 0 10px 26px rgba(24, 36, 50, 0.07);
+    }
+
+    .signal::before {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border: 18px solid rgba(20, 79, 143, 0.1);
+      border-radius: 50%;
+      right: -48px;
+      top: -48px;
+    }
+
+    .signal.water::before {
+      border-color: rgba(15, 118, 110, 0.13);
+    }
+
+    .signal.network::before {
+      border-color: rgba(214, 162, 30, 0.18);
+    }
+
+    .signal h3 {
+      position: relative;
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+
+    .signal p {
+      position: relative;
+      margin: 0;
+      color: var(--muted);
+    }
+
     .project-list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -550,6 +656,8 @@
       .profile-grid,
       .image-strip,
       .gallery,
+      .profile-links,
+      .visual-signals,
       .cards,
       .project-list,
       .contact-band {
@@ -581,17 +689,22 @@
   <header class="site-header">
     <nav class="nav" aria-label="Main navigation">
       <a class="brand" href="#home">
-        <span class="brand-mark">SK</span>
+        <img class="brand-logo" src="najah-logo.png" alt="An-Najah National University logo">
         <span>Prof. Dr. Saed Khayat</span>
       </a>
       <div class="nav-links">
         <a href="#about">Profile</a>
+        <a href="#impact">Impact</a>
         <a href="#experience">Experience</a>
+        <a href="#research-interests">Research</a>
+        <a href="#strategic-initiatives">Initiatives</a>
         <a href="#education">Education</a>
         <a href="#projects">Projects</a>
         <a href="#supervision">Supervision</a>
         <a href="#publications">Publications</a>
         <a href="#erasmus">Submitted Projects</a>
+        <a href="#media">Media</a>
+        <a href="#portfolio">Portfolio</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
@@ -604,21 +717,33 @@
           <p class="eyebrow">International grants, research leadership, and higher education development</p>
           <h1>Prof. Dr. rer. nat. Saed K. Khayat</h1>
           <p class="lead">Director of the International Grants and Project Center at An-Najah National University, with experience in international relations and external affairs, research unit leadership, water resources, hydro-geochemistry, and higher education transformation.</p>
+          <div class="focus-line" aria-label="Professional focus areas">
+            <span>International Grants</span>
+            <span>Water Sciences</span>
+            <span>Higher Education Transformation</span>
+            <span>Mediterranean Cooperation</span>
+          </div>
           <div class="actions">
-            <a class="button primary" href="#experience">View Experience</a>
-            <a class="button secondary" href="#publications">Research Output</a>
+          <a class="button primary" href="#experience">View Experience</a>
+          <a class="button secondary" href="#publications">Research Output</a>
+            <a class="button secondary" href="SAED EUROPASS full (4).pdf" target="_blank" rel="noopener">Download CV</a>
+            <a class="button secondary" href="#profiles">Online Profiles</a>
+            <a class="button primary" href="mailto:saed.khayat@gmail.com">Contact by Email</a>
           </div>
         </div>
         <aside class="hero-card" aria-label="Contact summary">
           <img class="portrait" src="saed-khayat.jpg" alt="Prof. Dr. Saed K. Khayat">
           <h2>Contact</h2>
           <ul class="contact-list">
-            <li><strong>Email</strong><a href="mailto:saed.khayyat@najah.edu">saed.khayyat@najah.edu</a></li>
+            <li><strong>University Email</strong><a href="mailto:saed.khayyat@najah.edu">saed.khayyat@najah.edu</a></li>
+            <li><strong>Personal Email</strong><a href="mailto:saed.khayat@gmail.com">saed.khayat@gmail.com</a></li>
             <li><strong>Mobile</strong><a href="tel:+972599868605">+972 599 868 605</a></li>
             <li><strong>Location</strong>Nablus, West Bank, Palestine</li>
             <li><strong>Institution</strong>An-Najah National University</li>
             <li><strong>Address</strong>Omar Ibn Alkhattab Street, P400, Nablus</li>
-            <li><strong>ORCID</strong>0000-0002-3865-4291</li>
+            <li><strong>ORCID:</strong><a href="https://orcid.org/0000-0002-3865-4291" target="_blank" rel="noopener">0000-0002-3865-4291</a></li>
+            <li><strong>Google Scholar:</strong><a href="PUT-YOUR-LINK" target="_blank" rel="noopener">Google Scholar Profile</a></li>
+            <li><strong>LinkedIn:</strong><a href="PUT-YOUR-LINK" target="_blank" rel="noopener">LinkedIn Profile</a></li>
           </ul>
         </aside>
       </div>
@@ -654,10 +779,39 @@
             <span>Water Resources and Environmental Studies</span>
           </div>
         </div>
+        <div class="visual-signals" aria-label="Visual focus areas">
+          <article class="signal network">
+            <h3>International Networks</h3>
+            <p>Partnerships, Mediterranean cooperation, mobility, and externally funded academic initiatives.</p>
+          </article>
+          <article class="signal water">
+            <h3>Water and Environment</h3>
+            <p>Hydrochemistry, isotope hydrology, aquifer systems, water quality, and climate resilience.</p>
+          </article>
+          <article class="signal">
+            <h3>Higher Education</h3>
+            <p>Bologna Process alignment, micro-credentials, quality assurance, and institutional capacity building.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section alt" id="experience">
+    <section class="section alt" id="impact">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Selected Impact</h2>
+          <p>A concise view of academic, research, and international project contributions.</p>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>20+</strong><span>Years in higher education and research</span></div>
+          <div class="stat"><strong>40+</strong><span>Selected publications and academic outputs</span></div>
+          <div class="stat"><strong>15+</strong><span>International and regional projects</span></div>
+          <div class="stat"><strong>7</strong><span>Graduate research works supervised</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
       <div class="wrap">
         <div class="section-head">
           <h2>Work Experience</h2>
@@ -758,6 +912,68 @@
       </div>
     </section>
 
+    <section class="section" id="research-interests">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Research Interests</h2>
+          <p>Core academic and institutional themes connecting water science, environmental systems, and higher education development.</p>
+        </div>
+        <div class="panel">
+          <ul class="compact-list">
+            <li>Hydrochemistry and isotope hydrology</li>
+            <li>Groundwater quality and aquifer systems</li>
+            <li>Water security and climate change adaptation</li>
+            <li>Environmental monitoring and pollution transport</li>
+            <li>Higher education modernization and micro-credentials</li>
+            <li>International grants, Bologna Process, and institutional capacity building</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="strategic-initiatives">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Current Strategic Initiatives</h2>
+          <p>Priority areas where research, institutional leadership, and international cooperation meet.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <h3>International Grants and Project Development</h3>
+            <p>Supporting competitive proposal development, institutional partnerships, Erasmus+, Horizon Europe, PRIMA, and regional cooperation frameworks.</p>
+          </article>
+          <article class="card">
+            <h3>Higher Education Transformation</h3>
+            <p>Advancing Bologna Process alignment, micro-credentials, recognition of prior learning, digital learning, and quality assurance frameworks.</p>
+          </article>
+          <article class="card">
+            <h3>BASE Project</h3>
+            <p>Supporting Bologna-aligned science education reform in Palestine and Jordan through international cooperation and institutional development.</p>
+          </article>
+          <article class="card">
+            <h3>CIMEA Middle East Office and TESI Initiative</h3>
+            <p>Contributing to recognition, transparency, and higher education system innovation through regional and European cooperation frameworks.</p>
+          </article>
+          <article class="card">
+            <h3>Water, Environment and Climate Resilience</h3>
+            <p>Promoting interdisciplinary research on groundwater, hydrochemistry, isotopes, water security, and climate adaptation in Palestine and the Eastern Mediterranean.</p>
+          </article>
+          <article class="card">
+            <h3>UNIMED Cooperation</h3>
+            <p>Strengthening Euro-Mediterranean university cooperation, academic networking, and collaborative project development.</p>
+          </article>
+          <article class="card">
+            <h3>An-Najah International Projects</h3>
+            <p>Expanding externally funded projects, institutional partnerships, and academic cooperation at An-Najah National University.</p>
+          </article>
+          <article class="card">
+            <h3>Global MBA / DBA Partnerships</h3>
+            <p>Developing international academic pathways and professional graduate partnerships in business, leadership, and institutional innovation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="education">
       <div class="wrap">
         <div class="section-head">
@@ -814,6 +1030,14 @@
           <article class="project">
             <h3>Bologna for Science Education in Palestine and Jordan</h3>
             <p>2024 - 2027. Elevating higher education in Palestine and Jordan through Bologna Process implementation. <a href="https://basejops.org/">basejops.org</a></p>
+          </article>
+          <article class="project">
+            <h3>CIMEA Middle East Office, TESI and UNIMED Cooperation</h3>
+            <p>Regional cooperation activities focused on recognition, academic transparency, Euro-Mediterranean university networking, and international higher education development.</p>
+          </article>
+          <article class="project">
+            <h3>An-Najah International Projects and Global MBA / DBA Partnerships</h3>
+            <p>Strategic project development and international academic partnerships supporting institutional growth, professional education, and global engagement.</p>
           </article>
           <article class="project">
             <h3>PhD Governance in Palestine - PhDGov</h3>
@@ -939,10 +1163,14 @@
         </div>
         <div class="panel" style="margin-top:18px">
           <h3>Research Profiles</h3>
-          <div class="tag-grid">
-            <span class="tag">Google Scholar: Prof. Dr. rer. nat. Saed Khayat</span>
-            <span class="tag">ResearchGate: Saed K. Khayat</span>
-            <span class="tag">ORCID: 0000-0002-3865-4291</span>
+          <div class="profile-links" id="profiles">
+            <a href="https://orcid.org/0000-0002-3865-4291" target="_blank" rel="noopener">ORCID</a>
+            <a href="https://scholar.google.com/citations?view_op=search_authors&mauthors=Saed%20Khayat" target="_blank" rel="noopener">Google Scholar</a>
+            <a href="https://www.researchgate.net/search/researcher?q=Saed%20Khayat" target="_blank" rel="noopener">ResearchGate</a>
+            <a href="https://www.scopus.com/results/authorNamesList.uri?name=name&st1=Khayat&st2=Saed" target="_blank" rel="noopener">Scopus</a>
+            <a href="https://www.linkedin.com/search/results/people/?keywords=Saed%20Khayat" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://www.adscientificindex.com/?s=Saed%20Khayat" target="_blank" rel="noopener">AD Scientific Index</a>
+            <a href="https://www.najah.edu/en/search/?q=Saed%20Khayat" target="_blank" rel="noopener">An-Najah Profile</a>
           </div>
         </div>
       </div>
@@ -958,6 +1186,38 @@
           <div class="tag-grid">
             <span class="tag">HIGH-Med</span><span class="tag">LEARN2</span><span class="tag">HEAL</span><span class="tag">Y-GREEN</span><span class="tag">DAPCP</span><span class="tag">APMP-HE</span><span class="tag">Eng-Inc</span><span class="tag">AI_SkillUP</span><span class="tag">CIAL</span><span class="tag">DEVTSM</span><span class="tag">YouLead</span><span class="tag">VODA</span><span class="tag">TVETDig</span><span class="tag">CONNECT</span><span class="tag">I-DRIVE</span><span class="tag">VET Tech</span><span class="tag">2D-VET</span><span class="tag">LEARN</span><span class="tag">METALAB</span><span class="tag">SOUTHMED-PROPMAN</span><span class="tag">SEEET</span><span class="tag">OSCEV-PT</span><span class="tag">GET-SMART</span><span class="tag">LAPE</span><span class="tag">EXCEED</span><span class="tag">Med-NbS-Edu</span><span class="tag">HTYouth</span><span class="tag">Prof-PM</span><span class="tag">EDU</span><span class="tag">IBT Diploma</span><span class="tag">SMART-IPC</span><span class="tag">XR-Centers</span><span class="tag">EdTech</span><span class="tag">PasPassDS</span><span class="tag">PDEHEV</span><span class="tag">EE4HUMANITIES</span><span class="tag">InclUPAS</span><span class="tag">BE-GREEN</span><span class="tag">SUCCEED</span><span class="tag">DigiPharm</span><span class="tag">NEVEREST</span>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="media">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Media & News</h2>
+          <p>Selected news items and public updates related to international projects, partnerships, and higher education transformation.</p>
+        </div>
+        <div class="panel">
+          <ul class="compact-list">
+            <li><a href="PUT-LINK" target="_blank" rel="noopener">Launch of Bologna for Science Education in Palestine and Jordan</a></li>
+            <li><a href="PUT-LINK" target="_blank" rel="noopener">An-Najah National University expands international partnerships</a></li>
+            <li><a href="PUT-LINK" target="_blank" rel="noopener">Higher education transformation and micro-credentials initiatives</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="portfolio">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Downloadable Portfolio</h2>
+          <p>Key downloadable documents for academic, research, and international cooperation purposes.</p>
+        </div>
+        <div class="panel">
+          <ul class="compact-list">
+            <li><a href="SAED EUROPASS full (4).pdf" target="_blank" rel="noopener">Academic CV</a></li>
+            <li><a href="Project-Portfolio.pdf" target="_blank" rel="noopener">International Projects Portfolio</a></li>
+            <li><a href="Research-Profile.pdf" target="_blank" rel="noopener">Research Profile</a></li>
+          </ul>
         </div>
       </div>
     </section>
