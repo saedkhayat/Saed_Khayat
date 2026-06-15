@@ -615,7 +615,54 @@ h3 {
   color: var(--muted);
   font-size: 13px;
 }
+/* Expert Services */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
 
+.service-card {
+  padding: 24px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 10px 26px rgba(24, 36, 50, 0.07);
+}
+
+.service-card h3 {
+  color: var(--accent-dark);
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.service-cta {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: 30px;
+  background: var(--ink);
+  color: #fff;
+  border-radius: 8px;
+}
+
+.service-cta h3 {
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: 24px;
+}
+
+.service-cta p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.76);
+}
 /* Contact Band */
 .contact-band {
   display: grid;
@@ -853,14 +900,15 @@ h3 {
     min-height: 720px;
   }
 
-  .hero-inner,
-  .profile-grid,
-  .visual-signals,
-  .education-grid,
-  .profile-links-grid,
-  .contact-band {
-    grid-template-columns: 1fr;
-  }
+ .hero-inner,
+.profile-grid,
+.visual-signals,
+.education-grid,
+.profile-links-grid,
+.contact-band,
+.service-cta {
+  grid-template-columns: 1fr;
+}
 
   .item {
     grid-template-columns: 1fr;
