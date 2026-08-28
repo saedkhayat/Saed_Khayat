@@ -415,6 +415,7 @@ html[dir="rtl"] .signal::before {
 
 .impact-grid,
 .service-grid,
+.updates-grid,
 .research-areas,
 .education-grid,
 .profile-links-grid {
@@ -429,6 +430,53 @@ html[dir="rtl"] .signal::before {
   flex-direction: column;
   justify-content: space-between;
   transition: all 0.25s ease;
+}
+
+.updates-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.update-card {
+  min-height: 238px;
+  padding: 22px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 10px 26px rgba(24, 36, 50, 0.07);
+  display: flex;
+  flex-direction: column;
+}
+
+.update-card.featured {
+  border-top: 4px solid var(--gold);
+}
+
+.update-meta {
+  width: fit-content;
+  margin-bottom: 12px;
+  padding: 4px 9px;
+  border-radius: 6px;
+  background: var(--soft);
+  color: var(--accent-dark);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.update-card h3 {
+  color: var(--accent-dark);
+}
+
+.update-card p {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 14px;
+  flex-grow: 1;
+}
+
+.update-card a {
+  color: var(--accent-dark);
+  font-size: 13px;
+  font-weight: 800;
 }
 
 .impact-card:hover,
