@@ -1,27 +1,333 @@
-// Smooth scroll enhancement and accessibility
-document.addEventListener('DOMContentLoaded', function() {
-  // Add active link highlighting based on scroll position
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
+const translations = {
+  en: {
+    "meta.title": "Prof. Dr. Saed K. Khayat | Expert Platform",
+    "brand.name": "Prof. Dr. Saed Khayat",
+    "brand.tagline": "Research, Grants & Higher Education Expert",
+    "nav.profile": "Profile",
+    "nav.services": "Services",
+    "nav.publications": "Publications",
+    "nav.metrics": "Research Metrics",
+    "nav.supervision": "Supervision",
+    "nav.projects": "Projects",
+    "nav.books": "Books & Chapters",
+    "nav.activities": "Scientific Activities",
+    "nav.news": "News & Media",
+    "nav.contact": "Contact",
+    "hero.eyebrow": "International Research Leadership & Higher Education Development",
+    "hero.title": "Prof. Dr. rer. nat. Saed K. Khayat",
+    "hero.lead": "Helping universities, institutions, and research teams secure international grants, build strategic partnerships, and advance water and higher education innovation.",
+    "hero.focus.water": "Water Sciences & Hydrogeology",
+    "hero.focus.grants": "International Grants",
+    "hero.focus.education": "Higher Education Development",
+    "hero.focus.cooperation": "Mediterranean Cooperation",
+    "hero.cta.support": "Request Expert Support",
+    "hero.cta.impact": "View Research Impact",
+    "hero.cta.cv": "Download CV",
+    "hero.cta.contact": "Contact",
+    "contact.quick": "Quick Contact",
+    "contact.universityEmail": "University Email",
+    "contact.personalEmail": "Personal Email",
+    "contact.phone": "Phone",
+    "contact.locationLabel": "Location",
+    "contact.location": "Nablus, Palestine",
+    "contact.institutionLabel": "Institution",
+    "contact.institution": "An-Najah National University",
+    "about.title": "Professional Profile",
+    "about.subtitle": "Academic leader and expert consultant with 20+ years in international grants, water sciences, strategic partnerships, and higher education development.",
+    "about.p1": "<strong>Prof. Dr. Saed K. Khayat</strong> serves as Director of the International Grants and Project Center at An-Najah National University in Nablus, Palestine. He brings expertise in international academic relations, project management, water resources, and education modernization.",
+    "about.p2": "His career spans research institutions in Germany, Palestinian universities, and the Ministry of Higher Education. He leads strategic initiatives in internationalization, Bologna Process alignment, water science research, and development of micro-credentials for higher education.",
+    "about.p3": "His work connects universities, research institutions, European partners, and international agencies through funded projects, research collaboration, training programs, and institutional capacity building.",
+    "signal.water.title": "Water Sciences",
+    "signal.water.text": "Hydrochemistry, isotope hydrology, aquifer systems, water quality, and climate resilience.",
+    "signal.network.title": "International Networks",
+    "signal.network.text": "Partnerships, grants, Mediterranean cooperation, and externally funded academic initiatives.",
+    "signal.education.title": "Higher Education",
+    "signal.education.text": "Bologna Process, micro-credentials, quality assurance, and institutional capacity building.",
+    "impact.title": "Academic and Professional Impact",
+    "impact.subtitle": "Verified metrics linked to external research profiles. Click each card for details.",
+    "impact.publications.label": "Publications",
+    "impact.publications.text": "Journal articles, conference papers, and book chapters",
+    "impact.publications.action": "View publications",
+    "impact.citations.number": "Dynamic",
+    "impact.citations.label": "Research Citations",
+    "impact.citations.text": "Google Scholar, ResearchGate, AD Scientific Index",
+    "impact.citations.action": "View metrics",
+    "impact.supervision.label": "Supervised Theses",
+    "impact.supervision.text": "Graduate research works and dissertations",
+    "impact.supervision.action": "View supervision",
+    "impact.projects.label": "International Projects",
+    "impact.projects.text": "Grants, Erasmus+, Horizon Europe, and regional initiatives",
+    "impact.projects.action": "View projects",
+    "services.title": "Expert Services",
+    "services.subtitle": "Professional support for universities, institutions, research teams, and international partners in grants, higher education development, water sciences, and project implementation.",
+    "services.grants.title": "International Grants & Proposal Development",
+    "services.grants.text": "Support in identifying funding opportunities, developing competitive proposals, building consortia, and aligning projects with donor priorities.",
+    "services.qa.title": "Higher Education Development & Quality Assurance",
+    "services.qa.text": "Consultation on academic modernization, Bologna Process alignment, micro-credentials, quality systems, and institutional capacity building.",
+    "services.water.title": "Water Sciences & Hydrogeology Consultation",
+    "services.water.text": "Expert guidance in groundwater systems, hydrochemistry, isotope hydrology, water quality, environmental monitoring, and climate resilience.",
+    "services.writing.title": "Research Collaboration & Scientific Writing",
+    "services.writing.text": "Support for research partnerships, scientific publications, project concepts, technical reports, and international academic collaboration.",
+    "services.training.title": "Institutional Training & Workshops",
+    "services.training.text": "Design and delivery of professional training for universities, researchers, project teams, and development institutions.",
+    "services.evaluation.title": "Project Evaluation, Monitoring & Impact Reporting",
+    "services.evaluation.text": "Support in monitoring funded projects, evaluating outcomes, preparing impact reports, and strengthening project visibility.",
+    "services.cta.title": "Request Expert Support",
+    "services.cta.text": "For consultation, training, proposal development, or institutional collaboration, please send a request with a short description of your needs.",
+    "services.cta.request": "Request a Consultation",
+    "services.cta.email": "Email Prof. Saed",
+    "services.cta.cv": "Download CV",
+    "research.title": "Research Focus Areas",
+    "research.subtitle": "Expertise connecting water science, environmental systems, and higher education innovation.",
+    "research.water.title": "Water Sciences & Environmental Research",
+    "research.water.1": "Hydrochemistry and isotope hydrology",
+    "research.water.2": "Groundwater quality and aquifer systems",
+    "research.water.3": "Water security and climate change adaptation",
+    "research.water.4": "Environmental monitoring and pollution transport",
+    "research.grants.title": "International Cooperation & Grants",
+    "research.grants.1": "European research frameworks (Horizon Europe, Erasmus+)",
+    "research.grants.2": "Mediterranean cooperation (PRIMA, UNIMED)",
+    "research.grants.3": "Institutional partnerships and capacity building",
+    "research.grants.4": "Competitive proposal development",
+    "research.education.title": "Higher Education Development",
+    "research.education.1": "Bologna Process alignment and micro-credentials",
+    "research.education.2": "Recognition frameworks and quality assurance",
+    "research.education.3": "Digital learning and virtual education",
+    "research.education.4": "TVET and institutional modernization",
+    "experience.title": "Leadership Experience",
+    "experience.subtitle": "Senior roles in universities, research institutions, and government agencies.",
+    "experience.current.title": "Director of International Grants and Project Center",
+    "experience.current.org": "An-Najah National University, Nablus",
+    "experience.current.1": "Identifies and secures international funding opportunities",
+    "experience.current.2": "Coordinates competitive proposal development and institutional partnerships",
+    "experience.current.3": "Oversees funded project implementation, compliance, and impact assessment",
+    "experience.vp.title": "Vice President for International Academic Relations",
+    "experience.vp.org": "Palestine Technical University Kadoorie",
+    "experience.vp.1": "Led university internationalization strategy and global academic networking",
+    "experience.vp.2": "Managed student and faculty mobility programs",
+    "experience.vp.3": "Promoted international research collaboration and funding opportunities",
+    "experience.mohe.title": "Director of Vocational Education and Colleges",
+    "experience.mohe.org": "Ministry of Higher Education and Scientific Research, Ramallah",
+    "experience.mohe.1": "Led TVET sector policy development and strategic planning",
+    "experience.mohe.2": "Oversaw quality standards, college coordination, and workforce development",
+    "education.title": "Education and Qualifications",
+    "education.subtitle": "Advanced training in environmental sciences, water research, and academic leadership.",
+    "education.phd.degree": "Doctor of Natural Sciences",
+    "education.phd.institution": "Karlsruhe Institute of Technology (KIT), Germany",
+    "education.msc.degree": "Master of Science",
+    "education.msc.institution": "An-Najah National University, Palestine",
+    "education.bsc.degree": "Bachelor of Science",
+    "education.bsc.institution": "An-Najah National University, Palestine",
+    "profiles.title": "External Research Profiles",
+    "profiles.subtitle": "Verify research metrics, publications, and citations through these linked profiles.",
+    "profiles.scholar": "Publications, citations, h-index, and research impact",
+    "profiles.rg": "Publication repository and research collaboration",
+    "profiles.orcid": "Unique researcher identifier and publication record",
+    "contact.title": "Get in Touch",
+    "contact.subtitle": "For consultation, research collaboration, project partnerships, or academic inquiries, please contact via email or submit a service request.",
+    "contact.request": "Submit Request",
+    "contact.email": "Email",
+    "contact.call": "Call",
+    "footer.name": "Prof. Dr. Saed K. Khayat",
+    "footer.role": "Director of International Grants and Project Center",
+    "footer.place": "An-Najah National University, Nablus, Palestine"
+  },
+  ar: {
+    "meta.title": "الأستاذ الدكتور سائد خياط | منصة خبرة واستشارات",
+    "brand.name": "الأستاذ الدكتور سائد خياط",
+    "brand.tagline": "خبير البحث العلمي والمنح وتطوير التعليم العالي",
+    "nav.profile": "الملف المهني",
+    "nav.services": "الخدمات",
+    "nav.publications": "المنشورات",
+    "nav.metrics": "مؤشرات البحث",
+    "nav.supervision": "الإشراف",
+    "nav.projects": "المشاريع",
+    "nav.books": "الكتب والفصول",
+    "nav.activities": "الأنشطة العلمية",
+    "nav.news": "الأخبار والإعلام",
+    "nav.contact": "تواصل",
+    "hero.eyebrow": "قيادة بحثية دولية وتطوير التعليم العالي",
+    "hero.title": "الأستاذ الدكتور سائد خياط",
+    "hero.lead": "أساعد الجامعات والمؤسسات وفرق البحث على بناء مشاريع دولية، وتطوير شراكات استراتيجية، وتعزيز الابتكار في علوم المياه والتعليم العالي.",
+    "hero.focus.water": "علوم المياه والهيدروجيولوجيا",
+    "hero.focus.grants": "المنح الدولية",
+    "hero.focus.education": "تطوير التعليم العالي",
+    "hero.focus.cooperation": "التعاون المتوسطي",
+    "hero.cta.support": "طلب دعم خبير",
+    "hero.cta.impact": "عرض الأثر البحثي",
+    "hero.cta.cv": "تحميل السيرة الذاتية",
+    "hero.cta.contact": "تواصل",
+    "contact.quick": "تواصل سريع",
+    "contact.universityEmail": "البريد الجامعي",
+    "contact.personalEmail": "البريد الشخصي",
+    "contact.phone": "الهاتف",
+    "contact.locationLabel": "الموقع",
+    "contact.location": "نابلس، فلسطين",
+    "contact.institutionLabel": "المؤسسة",
+    "contact.institution": "جامعة النجاح الوطنية",
+    "about.title": "الملف المهني",
+    "about.subtitle": "قائد أكاديمي وخبير استشاري بخبرة تزيد عن 20 عاماً في المنح الدولية وعلوم المياه والشراكات الاستراتيجية وتطوير التعليم العالي.",
+    "about.p1": "<strong>الأستاذ الدكتور سائد خياط</strong> يشغل منصب مدير مركز المنح والمشاريع الدولية في جامعة النجاح الوطنية في نابلس، فلسطين. يتمتع بخبرة واسعة في العلاقات الأكاديمية الدولية، وإدارة المشاريع، وموارد المياه، وتحديث التعليم.",
+    "about.p2": "تمتد خبرته عبر مؤسسات بحثية في ألمانيا وجامعات فلسطينية ووزارة التعليم العالي. يقود مبادرات استراتيجية في التدويل، ومواءمة مسار بولونيا، وأبحاث علوم المياه، وتطوير الشهادات المصغرة في التعليم العالي.",
+    "about.p3": "يربط عمله بين الجامعات ومؤسسات البحث والشركاء الأوروبيين والجهات الدولية من خلال مشاريع ممولة وتعاون بحثي وبرامج تدريب وبناء قدرات مؤسسية.",
+    "signal.water.title": "علوم المياه",
+    "signal.water.text": "الكيمياء المائية، الهيدرولوجيا النظيرية، الأنظمة الجوفية، جودة المياه، والمرونة المناخية.",
+    "signal.network.title": "الشبكات الدولية",
+    "signal.network.text": "الشراكات والمنح والتعاون المتوسطي والمبادرات الأكاديمية الممولة خارجياً.",
+    "signal.education.title": "التعليم العالي",
+    "signal.education.text": "مسار بولونيا، الشهادات المصغرة، ضمان الجودة، وبناء القدرات المؤسسية.",
+    "impact.title": "الأثر الأكاديمي والمهني",
+    "impact.subtitle": "مؤشرات موثقة مرتبطة بملفات بحثية خارجية. اضغط على كل بطاقة للاطلاع على التفاصيل.",
+    "impact.publications.label": "منشورات علمية",
+    "impact.publications.text": "أبحاث محكمة، أوراق مؤتمرات، وفصول كتب",
+    "impact.publications.action": "عرض المنشورات",
+    "impact.citations.number": "متجدد",
+    "impact.citations.label": "الاستشهادات البحثية",
+    "impact.citations.text": "Google Scholar وResearchGate وAD Scientific Index",
+    "impact.citations.action": "عرض المؤشرات",
+    "impact.supervision.label": "رسائل أشرف عليها",
+    "impact.supervision.text": "أعمال بحثية ورسائل دراسات عليا",
+    "impact.supervision.action": "عرض الإشراف",
+    "impact.projects.label": "مشاريع دولية",
+    "impact.projects.text": "منح وبرامج Erasmus+ وHorizon Europe ومبادرات إقليمية",
+    "impact.projects.action": "عرض المشاريع",
+    "services.title": "الخدمات الاستشارية",
+    "services.subtitle": "دعم مهني للجامعات والمؤسسات وفرق البحث والشركاء الدوليين في المنح وتطوير التعليم العالي وعلوم المياه وتنفيذ المشاريع.",
+    "services.grants.title": "المنح الدولية وتطوير المقترحات",
+    "services.grants.text": "دعم في تحديد فرص التمويل، وتطوير مقترحات تنافسية، وبناء التحالفات، ومواءمة المشاريع مع أولويات الجهات المانحة.",
+    "services.qa.title": "تطوير التعليم العالي وضمان الجودة",
+    "services.qa.text": "استشارات في تحديث البرامج الأكاديمية، ومواءمة مسار بولونيا، والشهادات المصغرة، وأنظمة الجودة، وبناء القدرات المؤسسية.",
+    "services.water.title": "استشارات علوم المياه والهيدروجيولوجيا",
+    "services.water.text": "إرشاد متخصص في أنظمة المياه الجوفية، والكيمياء المائية، والهيدرولوجيا النظيرية، وجودة المياه، والرصد البيئي، والمرونة المناخية.",
+    "services.writing.title": "التعاون البحثي والكتابة العلمية",
+    "services.writing.text": "دعم في الشراكات البحثية، والمنشورات العلمية، وأفكار المشاريع، والتقارير الفنية، والتعاون الأكاديمي الدولي.",
+    "services.training.title": "التدريب وورش العمل المؤسسية",
+    "services.training.text": "تصميم وتنفيذ تدريب مهني للجامعات والباحثين وفرق المشاريع ومؤسسات التنمية.",
+    "services.evaluation.title": "تقييم المشاريع والمتابعة وتقارير الأثر",
+    "services.evaluation.text": "دعم في متابعة المشاريع الممولة، وتقييم النتائج، وإعداد تقارير الأثر، وتعزيز ظهور المشروع.",
+    "services.cta.title": "طلب دعم خبير",
+    "services.cta.text": "للاستشارات أو التدريب أو تطوير المقترحات أو التعاون المؤسسي، يرجى إرسال طلب يتضمن وصفاً مختصراً لاحتياجاتكم.",
+    "services.cta.request": "طلب استشارة",
+    "services.cta.email": "مراسلة د. سائد",
+    "services.cta.cv": "تحميل السيرة الذاتية",
+    "research.title": "مجالات التركيز البحثي",
+    "research.subtitle": "خبرة تجمع بين علوم المياه والأنظمة البيئية وابتكار التعليم العالي.",
+    "research.water.title": "علوم المياه والبحث البيئي",
+    "research.water.1": "الكيمياء المائية والهيدرولوجيا النظيرية",
+    "research.water.2": "جودة المياه الجوفية وأنظمة الخزانات المائية",
+    "research.water.3": "الأمن المائي والتكيف مع التغير المناخي",
+    "research.water.4": "الرصد البيئي وانتقال الملوثات",
+    "research.grants.title": "التعاون الدولي والمنح",
+    "research.grants.1": "أطر البحث الأوروبية مثل Horizon Europe وErasmus+",
+    "research.grants.2": "التعاون المتوسطي مثل PRIMA وUNIMED",
+    "research.grants.3": "الشراكات المؤسسية وبناء القدرات",
+    "research.grants.4": "تطوير المقترحات التنافسية",
+    "research.education.title": "تطوير التعليم العالي",
+    "research.education.1": "مواءمة مسار بولونيا والشهادات المصغرة",
+    "research.education.2": "أطر الاعتراف وضمان الجودة",
+    "research.education.3": "التعلم الرقمي والتعليم الافتراضي",
+    "research.education.4": "التعليم والتدريب المهني والتحديث المؤسسي",
+    "experience.title": "الخبرة القيادية",
+    "experience.subtitle": "أدوار قيادية عليا في الجامعات ومؤسسات البحث والجهات الحكومية.",
+    "experience.current.title": "مدير مركز المنح والمشاريع الدولية",
+    "experience.current.org": "جامعة النجاح الوطنية، نابلس",
+    "experience.current.1": "تحديد وتأمين فرص التمويل الدولي",
+    "experience.current.2": "تنسيق تطوير المقترحات التنافسية والشراكات المؤسسية",
+    "experience.current.3": "متابعة تنفيذ المشاريع الممولة والامتثال وتقييم الأثر",
+    "experience.vp.title": "نائب الرئيس للعلاقات الأكاديمية الدولية",
+    "experience.vp.org": "جامعة فلسطين التقنية - خضوري",
+    "experience.vp.1": "قيادة استراتيجية التدويل وبناء الشبكات الأكاديمية العالمية",
+    "experience.vp.2": "إدارة برامج تبادل الطلبة وأعضاء الهيئة التدريسية",
+    "experience.vp.3": "تعزيز التعاون البحثي الدولي وفرص التمويل",
+    "experience.mohe.title": "مدير التعليم المهني والكليات",
+    "experience.mohe.org": "وزارة التعليم العالي والبحث العلمي، رام الله",
+    "experience.mohe.1": "قيادة تطوير سياسات قطاع التعليم والتدريب المهني والتخطيط الاستراتيجي",
+    "experience.mohe.2": "الإشراف على معايير الجودة وتنسيق الكليات وتطوير القوى العاملة",
+    "education.title": "التعليم والمؤهلات",
+    "education.subtitle": "تدريب متقدم في العلوم البيئية وأبحاث المياه والقيادة الأكاديمية.",
+    "education.phd.degree": "دكتوراه في العلوم الطبيعية",
+    "education.phd.institution": "معهد كارلسروه للتكنولوجيا، ألمانيا",
+    "education.msc.degree": "ماجستير علوم",
+    "education.msc.institution": "جامعة النجاح الوطنية، فلسطين",
+    "education.bsc.degree": "بكالوريوس علوم",
+    "education.bsc.institution": "جامعة النجاح الوطنية، فلسطين",
+    "profiles.title": "الملفات البحثية الخارجية",
+    "profiles.subtitle": "تحقق من المؤشرات البحثية والمنشورات والاستشهادات عبر هذه الروابط.",
+    "profiles.scholar": "المنشورات والاستشهادات ومؤشر h والأثر البحثي",
+    "profiles.rg": "مستودع المنشورات والتعاون البحثي",
+    "profiles.orcid": "معرف بحثي فريد وسجل للمنشورات",
+    "contact.title": "تواصل",
+    "contact.subtitle": "للاستشارات أو التعاون البحثي أو شراكات المشاريع أو الاستفسارات الأكاديمية، يمكن التواصل عبر البريد أو إرسال طلب خدمة.",
+    "contact.request": "إرسال طلب",
+    "contact.email": "البريد الإلكتروني",
+    "contact.call": "اتصال",
+    "footer.name": "الأستاذ الدكتور سائد خياط",
+    "footer.role": "مدير مركز المنح والمشاريع الدولية",
+    "footer.place": "جامعة النجاح الوطنية، نابلس، فلسطين"
+  }
+};
+
+function applyLanguage(language) {
+  const dictionary = translations[language] || translations.en;
+  document.documentElement.lang = language;
+  document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+  document.title = dictionary["meta.title"];
+
+  document.querySelectorAll("[data-i18n]").forEach((element) => {
+    const key = element.getAttribute("data-i18n");
+    if (dictionary[key]) {
+      element.textContent = dictionary[key];
+    }
+  });
+
+  document.querySelectorAll("[data-i18n-html]").forEach((element) => {
+    const key = element.getAttribute("data-i18n-html");
+    if (dictionary[key]) {
+      element.innerHTML = dictionary[key];
+    }
+  });
+
+  const label = document.querySelector("[data-language-label]");
+  if (label) {
+    label.textContent = language === "ar" ? "English" : "العربية";
+  }
+
+  localStorage.setItem("siteLanguage", language);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const savedLanguage = localStorage.getItem("siteLanguage") || "en";
+  applyLanguage(savedLanguage);
+
+  const languageToggle = document.querySelector("[data-language-toggle]");
+  if (languageToggle) {
+    languageToggle.addEventListener("click", function () {
+      const nextLanguage = document.documentElement.lang === "ar" ? "en" : "ar";
+      applyLanguage(nextLanguage);
+    });
+  }
+
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-links a");
 
   function highlightNavLink() {
-    let current = '';
-    sections.forEach(section => {
+    let current = "";
+    sections.forEach((section) => {
       const sectionTop = section.offsetTop;
-      if (pageYOffset >= sectionTop - 200) {
-        current = section.getAttribute('id');
+      if (window.pageYOffset >= sectionTop - 200) {
+        current = section.getAttribute("id");
       }
     });
 
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      const href = link.getAttribute('href');
-      if (href.includes('#' + current)) {
-        link.classList.add('active');
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      const href = link.getAttribute("href") || "";
+      if (current && href.includes("#" + current)) {
+        link.classList.add("active");
       }
     });
   }
 
-  window.addEventListener('scroll', highlightNavLink);
+  window.addEventListener("scroll", highlightNavLink);
   highlightNavLink();
 });
