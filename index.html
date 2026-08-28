@@ -3,31 +3,39 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Academic impact portal for Prof. Dr. Saed K. Khayat. Research leadership in water sciences, international grants, higher education development, and Mediterranean cooperation.">
-  <meta property="og:title" content="Prof. Dr. Saed K. Khayat - Academic Impact Portal">
-  <meta property="og:description" content="Director of International Grants and Project Center at An-Najah National University. Research, publications, projects, and leadership in water sciences and higher education.">
+  <meta name="description" content="Bilingual expert platform for Prof. Dr. Saed K. Khayat: international grants, water sciences, higher education development, research collaboration, and institutional consultation.">
+  <meta property="og:title" content="Prof. Dr. Saed K. Khayat - Expert Platform">
+  <meta property="og:description" content="Research, grants, water sciences, and higher education expertise for universities, institutions, and international partners.">
   <meta property="og:type" content="profile">
-  <title>Prof. Dr. Saed K. Khayat | Academic Impact Portal</title>
+  <title data-i18n="meta.title">Prof. Dr. Saed K. Khayat | Expert Platform</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="index.html">
-        <img class="brand-logo" src="najah-logo.png" alt="An-Najah National University logo">
-        <span>Prof. Dr. Saed Khayat</span>
+      <a class="brand" href="index.html" aria-label="Prof. Dr. Saed Khayat home">
+        <span class="brand-mark" aria-hidden="true">SK</span>
+        <span class="brand-text">
+          <strong data-i18n="brand.name">Prof. Dr. Saed Khayat</strong>
+          <small data-i18n="brand.tagline">Research, Grants & Higher Education Expert</small>
+        </span>
       </a>
-      <div class="nav-links">
-        <a href="#about">Profile</a>
-        <a href="#services">Services</a>
-        <a href="publications.html">Publications</a>
-        <a href="research-metrics.html">Research Metrics</a>
-        <a href="supervision.html">Supervision</a>
-        <a href="projects.html">Projects</a>
-        <a href="books.html">Books & Chapters</a>
-        <a href="activities.html">Scientific Activities</a>
-        <a href="news.html">News & Media</a>
-        <a href="#contact">Contact</a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#about" data-i18n="nav.profile">Profile</a>
+          <a href="#services" data-i18n="nav.services">Services</a>
+          <a href="publications.html" data-i18n="nav.publications">Publications</a>
+          <a href="research-metrics.html" data-i18n="nav.metrics">Research Metrics</a>
+          <a href="supervision.html" data-i18n="nav.supervision">Supervision</a>
+          <a href="projects.html" data-i18n="nav.projects">Projects</a>
+          <a href="books.html" data-i18n="nav.books">Books & Chapters</a>
+          <a href="activities.html" data-i18n="nav.activities">Scientific Activities</a>
+          <a href="news.html" data-i18n="nav.news">News & Media</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+        </div>
+        <button class="language-toggle" type="button" data-language-toggle aria-label="Switch language">
+          <span data-language-label>العربية</span>
+        </button>
       </div>
     </nav>
   </header>
@@ -36,35 +44,32 @@
     <section class="hero" aria-label="Introduction">
       <div class="hero-inner">
         <div>
-          <p class="eyebrow">International Research Leadership & Higher Education Development</p>
-          <h1>Prof. Dr. rer. nat. Saed K. Khayat</h1>
-          <p class="lead">Director of the International Grants and Project Center at An-Najah National University. Research leader in water sciences, hydrogeology, and international academic cooperation.</p>
+          <p class="eyebrow" data-i18n="hero.eyebrow">International Research Leadership & Higher Education Development</p>
+          <h1 data-i18n="hero.title">Prof. Dr. rer. nat. Saed K. Khayat</h1>
+          <p class="lead" data-i18n="hero.lead">Helping universities, institutions, and research teams secure international grants, build strategic partnerships, and advance water and higher education innovation.</p>
           <div class="focus-line" aria-label="Professional focus areas">
-            <span>Water Sciences & Hydrogeology</span>
-            <span>International Grants</span>
-            <span>Higher Education Development</span>
-            <span>Mediterranean Cooperation</span>
+            <span data-i18n="hero.focus.water">Water Sciences & Hydrogeology</span>
+            <span data-i18n="hero.focus.grants">International Grants</span>
+            <span data-i18n="hero.focus.education">Higher Education Development</span>
+            <span data-i18n="hero.focus.cooperation">Mediterranean Cooperation</span>
           </div>
           <div class="actions">
-            <a class="button primary" href="research-metrics.html">View Research Impact</a>
-            <a class="button secondary" href="publications.html">Publications</a>
-            <a class="button secondary" href="Saed-Khayat-CV.pdf" target="_blank" rel="noopener">Download CV</a>
-            <a class="button primary" href="mailto:saed.khayat@gmail.com">Contact</a>
+            <a class="button primary" href="#services" data-i18n="hero.cta.support">Request Expert Support</a>
+            <a class="button secondary" href="research-metrics.html" data-i18n="hero.cta.impact">View Research Impact</a>
+            <a class="button secondary" href="Saed-Khayat-CV.pdf" target="_blank" rel="noopener" data-i18n="hero.cta.cv">Download CV</a>
+            <a class="button primary" href="mailto:saed.khayat@gmail.com" data-i18n="hero.cta.contact">Contact</a>
           </div>
         </div>
         <aside class="hero-card" aria-label="Contact summary">
           <img class="portrait" src="saed-khayat.jpg" alt="Prof. Dr. Saed K. Khayat">
-          <h2>Quick Contact</h2>
+          <h2 data-i18n="contact.quick">Quick Contact</h2>
           <ul class="contact-list">
-            <li><strong>University Email</strong><a href="mailto:saed.khayyat@najah.edu">saed.khayyat@najah.edu</a></li>
-            <li><strong>Personal Email</strong><a href="mailto:saed.khayat@gmail.com">saed.khayat@gmail.com</a></li>
-            <li><strong>Phone</strong><a href="tel:+972599868605">+972 599 868 605</a></li>
-            <li><strong>Location</strong>Nablus, Palestine</li>
-            <li><strong>Institution</strong>An-Najah National University</li>
-            <li style="margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line);">
-              <strong>ORCID</strong>
-              <a href="https://orcid.org/0000-0002-3865-4291" target="_blank" rel="noopener">0000-0002-3865-4291</a>
-            </li>
+            <li><strong data-i18n="contact.universityEmail">University Email</strong><a href="mailto:saed.khayyat@najah.edu">saed.khayyat@najah.edu</a></li>
+            <li><strong data-i18n="contact.personalEmail">Personal Email</strong><a href="mailto:saed.khayat@gmail.com">saed.khayat@gmail.com</a></li>
+            <li><strong data-i18n="contact.phone">Phone</strong><a href="tel:+972599868605">+972 599 868 605</a></li>
+            <li><strong data-i18n="contact.locationLabel">Location</strong><span data-i18n="contact.location">Nablus, Palestine</span></li>
+            <li><strong data-i18n="contact.institutionLabel">Institution</strong><span data-i18n="contact.institution">An-Najah National University</span></li>
+            <li class="contact-divider"><strong>ORCID</strong><a href="https://orcid.org/0000-0002-3865-4291" target="_blank" rel="noopener">0000-0002-3865-4291</a></li>
           </ul>
         </aside>
       </div>
@@ -73,27 +78,27 @@
     <section class="section" id="about">
       <div class="wrap">
         <div class="section-head">
-          <h2>Professional Profile</h2>
-          <p>Academic leader and researcher with 20+ years in international grants, water sciences, strategic partnerships, and higher education development.</p>
+          <h2 data-i18n="about.title">Professional Profile</h2>
+          <p data-i18n="about.subtitle">Academic leader and expert consultant with 20+ years in international grants, water sciences, strategic partnerships, and higher education development.</p>
         </div>
         <div class="profile-grid">
           <div class="panel">
-            <p><strong>Prof. Dr. Saed K. Khayat</strong> serves as Director of the International Grants and Project Center at An-Najah National University in Nablus, Palestine. He brings expertise in international academic relations, project management, water resources, and education modernization.</p>
-            <p>His career spans research institutions in Germany, Palestinian universities, and the Ministry of Higher Education. He leads strategic initiatives in internationalization, Bologna Process alignment, water science research, and development of micro-credentials for higher education.</p>
-            <p>His work connects universities, research institutions, European partners, and international agencies through funded projects, research collaboration, training programs, and institutional capacity building in both water sciences and higher education innovation.</p>
+            <p data-i18n-html="about.p1"><strong>Prof. Dr. Saed K. Khayat</strong> serves as Director of the International Grants and Project Center at An-Najah National University in Nablus, Palestine. He brings expertise in international academic relations, project management, water resources, and education modernization.</p>
+            <p data-i18n="about.p2">His career spans research institutions in Germany, Palestinian universities, and the Ministry of Higher Education. He leads strategic initiatives in internationalization, Bologna Process alignment, water science research, and development of micro-credentials for higher education.</p>
+            <p data-i18n="about.p3">His work connects universities, research institutions, European partners, and international agencies through funded projects, research collaboration, training programs, and institutional capacity building.</p>
           </div>
           <div class="visual-signals" aria-label="Core expertise areas">
             <article class="signal water">
-              <h3>Water Sciences</h3>
-              <p>Hydrochemistry, isotope hydrology, aquifer systems, water quality, and climate resilience.</p>
+              <h3 data-i18n="signal.water.title">Water Sciences</h3>
+              <p data-i18n="signal.water.text">Hydrochemistry, isotope hydrology, aquifer systems, water quality, and climate resilience.</p>
             </article>
             <article class="signal network">
-              <h3>International Networks</h3>
-              <p>Partnerships, grants, Mediterranean cooperation, and externally funded academic initiatives.</p>
+              <h3 data-i18n="signal.network.title">International Networks</h3>
+              <p data-i18n="signal.network.text">Partnerships, grants, Mediterranean cooperation, and externally funded academic initiatives.</p>
             </article>
             <article class="signal">
-              <h3>Higher Education</h3>
-              <p>Bologna Process, micro-credentials, quality assurance, and institutional capacity building.</p>
+              <h3 data-i18n="signal.education.title">Higher Education</h3>
+              <p data-i18n="signal.education.text">Bologna Process, micro-credentials, quality assurance, and institutional capacity building.</p>
             </article>
           </div>
         </div>
@@ -103,232 +108,161 @@
     <section class="section alt" id="impact">
       <div class="wrap">
         <div class="section-head">
-          <h2>Academic and Professional Impact</h2>
-          <p>Verified metrics linked to external research profiles. Click each card for details.</p>
+          <h2 data-i18n="impact.title">Academic and Professional Impact</h2>
+          <p data-i18n="impact.subtitle">Verified metrics linked to external research profiles. Click each card for details.</p>
         </div>
         <div class="impact-grid">
           <a href="publications.html" class="impact-card">
             <div class="impact-number">40+</div>
-            <div class="impact-label">Publications</div>
-            <div class="impact-description">Journal articles, conference papers, and book chapters</div>
-            <div class="impact-action">View publications →</div>
+            <div class="impact-label" data-i18n="impact.publications.label">Publications</div>
+            <div class="impact-description" data-i18n="impact.publications.text">Journal articles, conference papers, and book chapters</div>
+            <div class="impact-action" data-i18n="impact.publications.action">View publications</div>
           </a>
           <a href="research-metrics.html" class="impact-card">
-            <div class="impact-number">Dynamic</div>
-            <div class="impact-label">Research Citations</div>
-            <div class="impact-description">Google Scholar, ResearchGate, AD Scientific Index</div>
-            <div class="impact-action">View metrics →</div>
+            <div class="impact-number" data-i18n="impact.citations.number">Dynamic</div>
+            <div class="impact-label" data-i18n="impact.citations.label">Research Citations</div>
+            <div class="impact-description" data-i18n="impact.citations.text">Google Scholar, ResearchGate, AD Scientific Index</div>
+            <div class="impact-action" data-i18n="impact.citations.action">View metrics</div>
           </a>
           <a href="supervision.html" class="impact-card">
             <div class="impact-number">7+</div>
-            <div class="impact-label">Supervised Theses</div>
-            <div class="impact-description">Graduate research works and dissertations</div>
-            <div class="impact-action">View supervision →</div>
+            <div class="impact-label" data-i18n="impact.supervision.label">Supervised Theses</div>
+            <div class="impact-description" data-i18n="impact.supervision.text">Graduate research works and dissertations</div>
+            <div class="impact-action" data-i18n="impact.supervision.action">View supervision</div>
           </a>
           <a href="projects.html" class="impact-card">
             <div class="impact-number">15+</div>
-            <div class="impact-label">International Projects</div>
-            <div class="impact-description">Grants, Erasmus+, Horizon Europe, and regional initiatives</div>
-            <div class="impact-action">View projects →</div>
-          </a>
-          <a href="books.html" class="impact-card">
-            <div class="impact-number">Books & Chapters</div>
-            <div class="impact-label">Academic Outputs</div>
-            <div class="impact-description">Edited volumes, technical reports, and educational materials</div>
-            <div class="impact-action">View books →</div>
-          </a>
-          <a href="activities.html" class="impact-card">
-            <div class="impact-number">Scientific</div>
-            <div class="impact-label">Academic Activities</div>
-            <div class="impact-description">Conferences, workshops, training, and international cooperation</div>
-            <div class="impact-action">View activities →</div>
+            <div class="impact-label" data-i18n="impact.projects.label">International Projects</div>
+            <div class="impact-description" data-i18n="impact.projects.text">Grants, Erasmus+, Horizon Europe, and regional initiatives</div>
+            <div class="impact-action" data-i18n="impact.projects.action">View projects</div>
           </a>
         </div>
       </div>
     </section>
-<section class="section" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Expert Services</h2>
-      <p>Professional support for universities, institutions, research teams, and international partners in grants, higher education development, water sciences, and project implementation.</p>
-    </div>
 
-    <div class="service-grid">
-      <article class="service-card">
-        <h3>International Grants & Proposal Development</h3>
-        <p>Support in identifying funding opportunities, developing competitive proposals, building consortia, and aligning projects with donor priorities.</p>
-      </article>
-
-      <article class="service-card">
-        <h3>Higher Education Development & Quality Assurance</h3>
-        <p>Consultation on academic modernization, Bologna Process alignment, micro-credentials, quality systems, and institutional capacity building.</p>
-      </article>
-
-      <article class="service-card">
-        <h3>Water Sciences & Hydrogeology Consultation</h3>
-        <p>Expert guidance in groundwater systems, hydrochemistry, isotope hydrology, water quality, environmental monitoring, and climate resilience.</p>
-      </article>
-
-      <article class="service-card">
-        <h3>Research Collaboration & Scientific Writing</h3>
-        <p>Support for research partnerships, scientific publications, project concepts, technical reports, and international academic collaboration.</p>
-      </article>
-
-      <article class="service-card">
-        <h3>Institutional Training & Workshops</h3>
-        <p>Design and delivery of professional training for universities, researchers, project teams, and development institutions.</p>
-      </article>
-
-      <article class="service-card">
-        <h3>Project Evaluation, Monitoring & Impact Reporting</h3>
-        <p>Support in monitoring funded projects, evaluating outcomes, preparing impact reports, and strengthening project visibility.</p>
-      </article>
-    </div>
-
-    <div class="service-cta">
-      <div>
-        <h3>Request Expert Support</h3>
-        <p>For consultation, training, proposal development, or institutional collaboration, please send a request with a short description of your needs.</p>
-      </div>
-      <div class="contact-actions">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfGXbcdu-6Vu3LqVeKIuuMRquaNIolkZrVNCHDMNFHvQilFlw/viewform" target="_blank" rel="noopener" class="button primary">Request a Consultation</a>
-        <a href="mailto:saed.khayat@gmail.com" class="button secondary">Email Prof. Saed</a>
-        <a href="Saed-Khayat-CV.pdf" target="_blank" rel="noopener" class="button secondary">Download CV</a>
-      </div>
-    </div>
-  </div>
-</section>
-    <section class="section" id="research-interests">
+    <section class="section" id="services">
       <div class="wrap">
         <div class="section-head">
-          <h2>Research Focus Areas</h2>
-          <p>Expertise connecting water science, environmental systems, and higher education innovation.</p>
+          <h2 data-i18n="services.title">Expert Services</h2>
+          <p data-i18n="services.subtitle">Professional support for universities, institutions, research teams, and international partners in grants, higher education development, water sciences, and project implementation.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <h3 data-i18n="services.grants.title">International Grants & Proposal Development</h3>
+            <p data-i18n="services.grants.text">Support in identifying funding opportunities, developing competitive proposals, building consortia, and aligning projects with donor priorities.</p>
+          </article>
+          <article class="service-card">
+            <h3 data-i18n="services.qa.title">Higher Education Development & Quality Assurance</h3>
+            <p data-i18n="services.qa.text">Consultation on academic modernization, Bologna Process alignment, micro-credentials, quality systems, and institutional capacity building.</p>
+          </article>
+          <article class="service-card">
+            <h3 data-i18n="services.water.title">Water Sciences & Hydrogeology Consultation</h3>
+            <p data-i18n="services.water.text">Expert guidance in groundwater systems, hydrochemistry, isotope hydrology, water quality, environmental monitoring, and climate resilience.</p>
+          </article>
+          <article class="service-card">
+            <h3 data-i18n="services.writing.title">Research Collaboration & Scientific Writing</h3>
+            <p data-i18n="services.writing.text">Support for research partnerships, scientific publications, project concepts, technical reports, and international academic collaboration.</p>
+          </article>
+          <article class="service-card">
+            <h3 data-i18n="services.training.title">Institutional Training & Workshops</h3>
+            <p data-i18n="services.training.text">Design and delivery of professional training for universities, researchers, project teams, and development institutions.</p>
+          </article>
+          <article class="service-card">
+            <h3 data-i18n="services.evaluation.title">Project Evaluation, Monitoring & Impact Reporting</h3>
+            <p data-i18n="services.evaluation.text">Support in monitoring funded projects, evaluating outcomes, preparing impact reports, and strengthening project visibility.</p>
+          </article>
+        </div>
+        <div class="service-cta">
+          <div>
+            <h3 data-i18n="services.cta.title">Request Expert Support</h3>
+            <p data-i18n="services.cta.text">For consultation, training, proposal development, or institutional collaboration, please send a request with a short description of your needs.</p>
+          </div>
+          <div class="contact-actions">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfGXbcdu-6Vu3LqVeKIuuMRquaNIolkZrVNCHDMNFHvQilFlw/viewform" target="_blank" rel="noopener" class="button primary" data-i18n="services.cta.request">Request a Consultation</a>
+            <a href="mailto:saed.khayat@gmail.com" class="button secondary" data-i18n="services.cta.email">Email Prof. Saed</a>
+            <a href="Saed-Khayat-CV.pdf" target="_blank" rel="noopener" class="button secondary" data-i18n="services.cta.cv">Download CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="research-interests">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 data-i18n="research.title">Research Focus Areas</h2>
+          <p data-i18n="research.subtitle">Expertise connecting water science, environmental systems, and higher education innovation.</p>
         </div>
         <div class="research-areas">
           <div class="area-group">
-            <h3>Water Sciences & Environmental Research</h3>
+            <h3 data-i18n="research.water.title">Water Sciences & Environmental Research</h3>
             <ul class="area-list">
-              <li>Hydrochemistry and isotope hydrology</li>
-              <li>Groundwater quality and aquifer systems</li>
-              <li>Water security and climate change adaptation</li>
-              <li>Environmental monitoring and pollution transport</li>
+              <li data-i18n="research.water.1">Hydrochemistry and isotope hydrology</li>
+              <li data-i18n="research.water.2">Groundwater quality and aquifer systems</li>
+              <li data-i18n="research.water.3">Water security and climate change adaptation</li>
+              <li data-i18n="research.water.4">Environmental monitoring and pollution transport</li>
             </ul>
           </div>
           <div class="area-group">
-            <h3>International Cooperation & Grants</h3>
+            <h3 data-i18n="research.grants.title">International Cooperation & Grants</h3>
             <ul class="area-list">
-              <li>European research frameworks (Horizon Europe, Erasmus+)</li>
-              <li>Mediterranean cooperation (PRIMA, UNIMED)</li>
-              <li>Institutional partnerships and capacity building</li>
-              <li>Competitive proposal development</li>
+              <li data-i18n="research.grants.1">European research frameworks (Horizon Europe, Erasmus+)</li>
+              <li data-i18n="research.grants.2">Mediterranean cooperation (PRIMA, UNIMED)</li>
+              <li data-i18n="research.grants.3">Institutional partnerships and capacity building</li>
+              <li data-i18n="research.grants.4">Competitive proposal development</li>
             </ul>
           </div>
           <div class="area-group">
-            <h3>Higher Education Development</h3>
+            <h3 data-i18n="research.education.title">Higher Education Development</h3>
             <ul class="area-list">
-              <li>Bologna Process alignment and micro-credentials</li>
-              <li>Recognition frameworks and quality assurance</li>
-              <li>Digital learning and virtual education</li>
-              <li>TVET and institutional modernization</li>
+              <li data-i18n="research.education.1">Bologna Process alignment and micro-credentials</li>
+              <li data-i18n="research.education.2">Recognition frameworks and quality assurance</li>
+              <li data-i18n="research.education.3">Digital learning and virtual education</li>
+              <li data-i18n="research.education.4">TVET and institutional modernization</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section alt" id="experience">
+    <section class="section" id="experience">
       <div class="wrap">
         <div class="section-head">
-          <h2>Leadership Experience</h2>
-          <p>Senior roles in universities, research institutions, and government agencies.</p>
+          <h2 data-i18n="experience.title">Leadership Experience</h2>
+          <p data-i18n="experience.subtitle">Senior roles in universities, research institutions, and government agencies.</p>
         </div>
         <div class="timeline">
           <article class="item">
-            <div class="date">2022 – Present</div>
+            <div class="date">2022 - Present</div>
             <div>
-              <h3>Director of International Grants and Project Center</h3>
-              <p class="org">An-Najah National University, Nablus</p>
+              <h3 data-i18n="experience.current.title">Director of International Grants and Project Center</h3>
+              <p class="org" data-i18n="experience.current.org">An-Najah National University, Nablus</p>
               <ul>
-                <li>Identifies and secures international funding (Erasmus+, Horizon Europe, PRIMA, USAID)</li>
-                <li>Coordinates competitive proposal development and institutional partnerships</li>
-                <li>Oversees funded project implementation, compliance, and impact assessment</li>
-                <li>Promotes digitalization, virtual learning, and institutional capacity building</li>
+                <li data-i18n="experience.current.1">Identifies and secures international funding opportunities</li>
+                <li data-i18n="experience.current.2">Coordinates competitive proposal development and institutional partnerships</li>
+                <li data-i18n="experience.current.3">Oversees funded project implementation, compliance, and impact assessment</li>
               </ul>
             </div>
           </article>
           <article class="item">
-            <div class="date">2021 – 2022</div>
+            <div class="date">2021 - 2022</div>
             <div>
-              <h3>Vice President for International Academic Relations</h3>
-              <p class="org">Palestine Technical University Kadoorie</p>
+              <h3 data-i18n="experience.vp.title">Vice President for International Academic Relations</h3>
+              <p class="org" data-i18n="experience.vp.org">Palestine Technical University Kadoorie</p>
               <ul>
-                <li>Led university internationalization strategy and global academic networking</li>
-                <li>Managed student and faculty mobility programs</li>
-                <li>Promoted international research collaboration and funding opportunities</li>
+                <li data-i18n="experience.vp.1">Led university internationalization strategy and global academic networking</li>
+                <li data-i18n="experience.vp.2">Managed student and faculty mobility programs</li>
+                <li data-i18n="experience.vp.3">Promoted international research collaboration and funding opportunities</li>
               </ul>
             </div>
           </article>
           <article class="item">
-            <div class="date">2020 – 2021</div>
+            <div class="date">1997 - 2010</div>
             <div>
-              <h3>Dean of Planning, Development and Quality</h3>
-              <p class="org">Palestine Technical University Kadoorie</p>
+              <h3 data-i18n="experience.mohe.title">Director of Vocational Education and Colleges</h3>
+              <p class="org" data-i18n="experience.mohe.org">Ministry of Higher Education and Scientific Research, Ramallah</p>
               <ul>
-                <li>Led strategic planning, institutional development, and quality assurance</li>
-                <li>Supported curriculum development and capacity building</li>
-              </ul>
-            </div>
-          </article>
-          <article class="item">
-            <div class="date">2014 – 2015</div>
-            <div>
-              <h3>Director of Technical and Applied Research Center</h3>
-              <p class="org">Palestine Technical University Kadoorie</p>
-              <ul>
-                <li>Led applied research, innovation, and external partnerships</li>
-                <li>Supported researchers through training and knowledge dissemination</li>
-              </ul>
-            </div>
-          </article>
-          <article class="item">
-            <div class="date">2016</div>
-            <div>
-              <h3>Guest Researcher in Hydrogeochemistry</h3>
-              <p class="org">Helmholtz Centre for Environmental Research, Halle, Germany</p>
-              <ul>
-                <li>Guest scientist in Catchment Hydrology Department</li>
-                <li>Led international research projects with German partners</li>
-              </ul>
-            </div>
-          </article>
-          <article class="item">
-            <div class="date">2011 – 2022</div>
-            <div>
-              <h3>Professor</h3>
-              <p class="org">Palestine Technical University Kadoorie</p>
-              <ul>
-                <li>Teaching and research in water, environmental, and related programs</li>
-              </ul>
-            </div>
-          </article>
-          <article class="item">
-            <div class="date">2003 – 2009</div>
-            <div>
-              <h3>Guest Scientist and Research Fellow</h3>
-              <p class="org">Helmholtz Centre for Environmental Research UFZ, Halle, Germany</p>
-              <ul>
-                <li>Postdoctoral research in environmental and water-related studies</li>
-              </ul>
-            </div>
-          </article>
-          <article class="item">
-            <div class="date">1997 – 2010</div>
-            <div>
-              <h3>Director of Vocational Education and Colleges</h3>
-              <p class="org">Ministry of Higher Education and Scientific Research, Ramallah</p>
-              <ul>
-                <li>Led TVET sector policy development and strategic planning</li>
-                <li>Oversaw quality standards, college coordination, and workforce development</li>
+                <li data-i18n="experience.mohe.1">Led TVET sector policy development and strategic planning</li>
+                <li data-i18n="experience.mohe.2">Oversaw quality standards, college coordination, and workforce development</li>
               </ul>
             </div>
           </article>
@@ -336,89 +270,75 @@
       </div>
     </section>
 
-    <section class="section" id="education">
+    <section class="section alt" id="education">
       <div class="wrap">
         <div class="section-head">
-          <h2>Education and Qualifications</h2>
-          <p>Advanced training in environmental sciences, water research, and academic leadership.</p>
+          <h2 data-i18n="education.title">Education and Qualifications</h2>
+          <p data-i18n="education.subtitle">Advanced training in environmental sciences, water research, and academic leadership.</p>
         </div>
         <div class="education-grid">
           <article class="education-card">
             <h3>Dr. rer. nat. (PhD)</h3>
-            <p class="degree-detail">Doctor of Natural Sciences</p>
-            <p class="institution">Karlsruhe Institute of Technology (KIT), Germany</p>
-            <p class="year">2003 – 2005</p>
+            <p class="degree-detail" data-i18n="education.phd.degree">Doctor of Natural Sciences</p>
+            <p class="institution" data-i18n="education.phd.institution">Karlsruhe Institute of Technology (KIT), Germany</p>
+            <p class="year">2003 - 2005</p>
             <p class="eqf">EQF Level 8</p>
           </article>
           <article class="education-card">
             <h3>MSc Environmental Sciences</h3>
-            <p class="degree-detail">Master of Science</p>
-            <p class="institution">An-Najah National University, Palestine</p>
-            <p class="year">1999 – 2001</p>
+            <p class="degree-detail" data-i18n="education.msc.degree">Master of Science</p>
+            <p class="institution" data-i18n="education.msc.institution">An-Najah National University, Palestine</p>
+            <p class="year">1999 - 2001</p>
             <p class="eqf">EQF Level 7</p>
           </article>
           <article class="education-card">
             <h3>BSc Biological Sciences</h3>
-            <p class="degree-detail">Bachelor of Science</p>
-            <p class="institution">An-Najah National University, Palestine</p>
-            <p class="year">1992 – 1996</p>
+            <p class="degree-detail" data-i18n="education.bsc.degree">Bachelor of Science</p>
+            <p class="institution" data-i18n="education.bsc.institution">An-Najah National University, Palestine</p>
+            <p class="year">1992 - 1996</p>
             <p class="eqf">EQF Level 6</p>
           </article>
         </div>
-        <div class="panel" style="margin-top: 28px;">
-          <h3>Languages</h3>
-          <div class="tag-grid">
-            <span class="tag">Arabic — Mother tongue</span>
-            <span class="tag">English — Fluent (C1)</span>
-            <span class="tag">German — Fluent (C1)</span>
-            <span class="tag">French — Working (B1)</span>
-          </div>
-        </div>
       </div>
     </section>
 
-    <section class="section alt" id="external-profiles">
+    <section class="section" id="external-profiles">
       <div class="wrap">
         <div class="section-head">
-          <h2>External Research Profiles</h2>
-          <p>Verify research metrics, publications, and citations through these linked profiles.</p>
+          <h2 data-i18n="profiles.title">External Research Profiles</h2>
+          <p data-i18n="profiles.subtitle">Verify research metrics, publications, and citations through these linked profiles.</p>
         </div>
         <div class="profile-links-grid">
           <a href="https://scholar.google.com/citations?user=iu7LktgAAAAJ&hl=ar" target="_blank" rel="noopener" class="profile-link">
-            <div class="profile-icon">🎓</div>
+            <div class="profile-icon">GS</div>
             <h3>Google Scholar</h3>
-            <p>Publications, citations, h-index, and research impact</p>
+            <p data-i18n="profiles.scholar">Publications, citations, h-index, and research impact</p>
           </a>
           <a href="https://www.researchgate.net/profile/Saed-Khayat" target="_blank" rel="noopener" class="profile-link">
-            <div class="profile-icon">🔬</div>
+            <div class="profile-icon">RG</div>
             <h3>ResearchGate</h3>
-            <p>Publication repository and research collaboration</p>
-          </a>
-          <a href="https://adscientificindex.com/scientist/saed-khayat/4526106/" target="_blank" rel="noopener" class="profile-link">
-            <div class="profile-icon">📊</div>
-            <h3>AD Scientific Index</h3>
-            <p>Research metrics and academic visibility</p>
+            <p data-i18n="profiles.rg">Publication repository and research collaboration</p>
           </a>
           <a href="https://orcid.org/0000-0002-3865-4291" target="_blank" rel="noopener" class="profile-link">
-            <div class="profile-icon">🆔</div>
+            <div class="profile-icon">ID</div>
             <h3>ORCID</h3>
-            <p>Unique researcher identifier and publication record</p>
+            <p data-i18n="profiles.orcid">Unique researcher identifier and publication record</p>
           </a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="contact">
+    <section class="section alt" id="contact">
       <div class="wrap">
         <div class="contact-band">
           <div>
-            <h2>Get in Touch</h2>
-            <p>For research collaboration, project partnerships, or academic inquiries, please contact via email or phone.</p>
+            <h2 data-i18n="contact.title">Get in Touch</h2>
+            <p data-i18n="contact.subtitle">For consultation, research collaboration, project partnerships, or academic inquiries, please contact via email or submit a service request.</p>
           </div>
           <div class="contact-actions">
-            <a href="mailto:saed.khayyat@najah.edu" class="button primary">University Email</a>
-            <a href="mailto:saed.khayat@gmail.com" class="button secondary">Personal Email</a>
-            <a href="tel:+972599868605" class="button secondary">Call</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfGXbcdu-6Vu3LqVeKIuuMRquaNIolkZrVNCHDMNFHvQilFlw/viewform" target="_blank" rel="noopener" class="button primary" data-i18n="contact.request">Submit Request</a>
+            <a href="mailto:saed.khayat@gmail.com" class="button secondary" data-i18n="contact.email">Email</a>
+            <a href="tel:+972599868605" class="button secondary" data-i18n="contact.call">Call</a>
           </div>
         </div>
       </div>
@@ -428,16 +348,15 @@
   <footer class="footer">
     <div class="wrap">
       <div>
-        <strong>Prof. Dr. Saed K. Khayat</strong><br>
-        Director of International Grants and Project Center<br>
-        An-Najah National University, Nablus, Palestine<br>
+        <strong data-i18n="footer.name">Prof. Dr. Saed K. Khayat</strong><br>
+        <span data-i18n="footer.role">Director of International Grants and Project Center</span><br>
+        <span data-i18n="footer.place">An-Najah National University, Nablus, Palestine</span><br>
         <a href="mailto:saed.khayyat@najah.edu">saed.khayyat@najah.edu</a>
       </div>
-      <div style="text-align: right;">
-        <a href="https://scholar.google.com/citations?user=iu7LktgAAAAJ&hl=ar" target="_blank" rel="noopener">Google Scholar</a> •
-        <a href="https://www.researchgate.net/profile/Saed-Khayat" target="_blank" rel="noopener">ResearchGate</a> •
-        <a href="https://orcid.org/0000-0002-3865-4291" target="_blank" rel="noopener">ORCID</a> •
-        <a href="https://adscientificindex.com/scientist/saed-khayat/4526106/" target="_blank" rel="noopener">AD Scientific Index</a>
+      <div class="footer-links">
+        <a href="https://scholar.google.com/citations?user=iu7LktgAAAAJ&hl=ar" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="https://www.researchgate.net/profile/Saed-Khayat" target="_blank" rel="noopener">ResearchGate</a>
+        <a href="https://orcid.org/0000-0002-3865-4291" target="_blank" rel="noopener">ORCID</a>
       </div>
     </div>
   </footer>
